@@ -1,0 +1,16 @@
+#1. 로그인
+az login -t <TENENANT ID>
+
+#2. 기본 구독 변경
+az account set --subscription <SUBSCRIPTION ID>
+
+#3. 가격 책정 플랜 만들기
+az appservice plan create -g rg-kdk -n asp-linux --is-linux --number-of-workers 1 --sku B1 -l japaneast
+
+#4. 사용 가능한 런타임 확인
+az webapp list-runtimes 
+az webapp list-runtimes --os windows
+az webapp list-runtimes --os Linux
+
+#5. 앱 서비스 배포
+az webapp create -g rg-kdk -p asp-linux -n webkdk2 --runtime "NODE:18-lts" 
