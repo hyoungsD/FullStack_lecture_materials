@@ -1,0 +1,6 @@
+# VITE로 반드시 시작하기
+# 공백, 따옴표 없이 만들기
+VITE_OPEN_WEATER_KEY=ff942b64b1a4e7e8f778514925ec6740
+
+
+const appid = import.meta.env.VITE_OPEN_WEATER_KEY;

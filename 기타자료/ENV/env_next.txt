@@ -1,0 +1,7 @@
+# 앞에 NEXT_PUBLIC_ 필수
+# 마지막에 '/'는 넣지 않는 것이 좋음
+# 띄어쓰기 없이, '' 없이
+NEXT_PUBLIC_API_URL=https://yangpa.azurewebsites.net
+NEXT_PUBLIC_IMAGE_BASE_URL=https://styangpa.blob.core.windows.net/yangpa
+
+
