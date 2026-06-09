@@ -1,0 +1,14 @@
+{
+  "name": "ch08-mvc-board",
+  "version": "1.0.0",
+  "description": "MVC 게시판 + 유저 — 라우터/컨트롤러/서비스/모델 계층 분리",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "sequelize": "^6.37.3",
+    "sqlite3": "^5.1.7"
+  }
+}

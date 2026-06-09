@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "dayjs": "^1.11.21",
+    "dotenv": "^17.4.2",
+    "uuid": "^14.0.0",
+    "validator": "^13.15.35",
+    "winston": "^3.19.0"
+  }
+}
