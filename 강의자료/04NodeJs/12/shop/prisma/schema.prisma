@@ -1,0 +1,40 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int       @id @default(autoincrement())
+  email     String    @unique
+  name      String
+  products  Product[] // 이 사용자가 판매자로 등록한 상품들 (1 : N)
+  createdAt DateTime  @default(now())
+}
+
+model Category {
+  id       Int       @id @default(autoincrement())
+  name     String    @unique
+  products Product[] // M:N PRISMA가 자동으로 중간테이블 생성
+}
+
+model Product {
+  id          Int        @id @default(autoincrement())
+  name        String
+  description String
+  price       Int
+  stock       Int
+  seller      User       @relation(fields: [sellerId], references: [id]) //prisma FK 제공
+  sellerId    Int //  진짜 외래키   
+  categories  Category[] // M: N
+  createdAt   DateTime   @default(now())
+}

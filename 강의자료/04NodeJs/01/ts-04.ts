@@ -42,3 +42,25 @@ const golden = new Dog("금둥이", 2, "골든 리트리버 ");
 console.log("dog info", golden.getInfo())
 golden.bark()
 golden.move(20)
+
+interface Flyable {
+    fly() : void 
+}
+
+class Bird extends Animal implements Flyable {
+    private wingspan: number ;
+
+    constructor(name: string, age: number, wingspan: number) {
+        // 문제 2 생성자 안의 내용을 구현해보세요 
+        super(name, age);
+        this.wingspan = wingspan
+    }
+
+    fly() : void {
+        console.log(`${this.name} is flying with wingspan ${this.wingspan}`)
+    }
+}
+
+const bird = new Bird("참새", 2, 0.1)
+console.log(bird.getInfo());
+bird.fly();
