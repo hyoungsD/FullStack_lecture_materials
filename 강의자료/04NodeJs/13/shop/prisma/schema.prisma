@@ -1,0 +1,99 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  BUYER // 구매자 (기본)
+  SELLER // 판매자 
+  ADMIN // 관리자
+}
+
+enum OrderStatus {
+  PENDING
+  PAID
+  SHIPPED
+  DONE
+  CANCELLED
+}
+
+model User {
+  id        Int        @id @default(autoincrement())
+  email     String     @unique
+  password  String     @default("pw1234") //bcrypt 암호활 예정 
+  name      String
+  role      Role       @default(BUYER)
+  products  Product[] // 이 사용자가 판매자로 등록한 상품들 (1 : N)
+  createdAt DateTime   @default(now())
+  cartItems CartItem[]
+  orders    Order[]
+}
+
+model Category {
+  id       Int       @id @default(autoincrement())
+  name     String    @unique
+  products Product[] // M:N PRISMA가 자동으로 중간테이블 생성
+}
+
+model Product {
+  id            Int            @id @default(autoincrement())
+  name          String
+  description   String
+  price         Int
+  stock         Int
+  seller        User           @relation(fields: [sellerId], references: [id]) //prisma FK 제공
+  sellerId      Int //  진짜 외래키   
+  categories    Category[] // M: N
+  createdAt     DateTime       @default(now())
+  cartItems     CartItem[]
+  orderItems    OrderItem[]
+  productImages ProductImage[]
+}
+
+model ProductImage {
+  id         Int     @id @default(autoincrement())
+  storedName String // 저장 파일 이름 
+  productId  Int
+  product    Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+}
+
+model CartItem {
+  id        Int     @id @default(autoincrement())
+  userId    Int
+  user      User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  productId Int
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  quantity  Int
+
+  @@unique([userId, productId])
+}
+
+model Order {
+  id         Int         @id @default(autoincrement())
+  buyerId    Int
+  buyer      User        @relation(fields: [buyerId], references: [id], onDelete: Cascade)
+  status     OrderStatus @default(PENDING)
+  totalPrice Int
+  items      OrderItem[]
+  createdAt  DateTime    @default(now())
+}
+
+model OrderItem {
+  id        Int     @id @default(autoincrement())
+  orderId   Int
+  order     Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId Int
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  quantity  Int
+  unitPrice Int
+}
