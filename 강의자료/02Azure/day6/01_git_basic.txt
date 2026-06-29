@@ -1,0 +1,31 @@
+#1. git 설치
+
+#2. 원격 리포지토리 로컬 복제
+cd c:\lab\day6\
+mkdir project
+cd project
+
+git clone https://github.com/chatgptkor/guestbook.git
+
+#3. VSCode에서 프로젝트 수행
+guestbook.zip 압축 풀고 내용 2번 단계에서 클론한 guestbook 폴더에 복사
+
+#4. Author identity config
+git config --global user.email "chatgptkor@outlook.com"
+git config --global user.name "chatgptkor"
+
+#5. 작업을 로컬에 저장
+cd guestbook
+git add .
+git commit –m “initial upload”
+
+#6. 원격 리포지토리에 작업 저장
+git push
+
+*필요시 GitHub Sign in: [Sign in with your browser]
+
+#7. GitHub에서 header.ejs 직접 수정 
+Express Guestbook --> 구내식당 방명록
+
+#8. 원격 리포지토리의 모든 업데이트 확인
+git pull

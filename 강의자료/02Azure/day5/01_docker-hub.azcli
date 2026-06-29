@@ -1,0 +1,11 @@
+#0. Docker Hub 가입
+#1. Docker Hub에 리포지토리 만들기
+#2. 로그인
+docker login -u <YOUR ACCOUNT>
+
+#3. 도커 이미지 태그 적용
+docker image tag guestbook-app:latest <DOCKER ACC.>/guestbook-app:latest
+
+#4. Docker Hub에 이미지 등록하기
+docker image push <DOCKER ACC.>/guestbook-app:latest
+

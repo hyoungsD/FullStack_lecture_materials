@@ -1,0 +1,20 @@
+#1. Enable WSL 2
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux -NoRestart
+
+#2. Enable ‘Virtual Machine Platform’ 
+Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform 
+
+#3. Linux 커널 업데이트 패키지 다운로드 및 설치
+https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
+
+#4. Set WSL 2 as default
+wsl --set-default-version 2
+
+#5. Azure CLI 설치
+##Windows
+https://docs.microsoft.com/ko-kr/cli/azure/install-azure-cli-windows?tabs=azure-cli
+
+#6. 도커 데스크톱 다운로드
+https://hub.docker.com/editions/community/docker-ce-desktop-windows
+
+#7. 도커 데스크톱 설치 --> 다시 시작

@@ -1,0 +1,21 @@
+#1. Azure 포털 전역 검색에서 'App Services'로 검색
+#2. App Services 블레이드에서 [+만들기]
+*언급하지 않은 항목은 모두 기본 값 사용.
+[기본 사항]
+-리소스 그룹: rg-containerlab-[SUFFIX]
+-이름: app-gb-[SUFFIX]
+-게시: 컨테이너
+-운영체제: 리눅스
+-지역: <사전 지정한 지역>
+-가격 책정 플랜: asp-container-[SUFFIX] / S1
+[컨테이너]
+-이미지 소스: Azure Container Registry
+-레지스트리: cr[SUFFIX]
+-이미지: guestbook-app
+-이미지 태그: v1
+[모니터링+보안]
+- Application Insights: 아니오
+
+#3. 테스트
+
+#4. DAY1의 docker-compose.yml을 사용해 wordpress 배포하기

@@ -1,0 +1,26 @@
+#1. 새로운 브랜치 만들고 전환하기
+git branch dev
+git checkout dev
+--- 한 번에 ----
+git checkout -b dev
+
+#2. 로컬 브랜치를 원격 저장소에 새 브랜치 생성
+ git push origin dev
+
+#3. 새로운 기능 작업 수행
+header.ejs: Write in the guestbook --> 식단 평가 쓰기
+
+#4. 로컬에 작업 저장
+git add .
+git commit -m “update from dev”
+
+#5. 원격 리포지토리 브랜치에 작업 저장
+git push --set-upstream origin dev
+
+#6. 작업을 병합할 브랜치로 전환
+git checkout main
+
+#7. 작업한 브랜치를 병합할 브랜치로 병합 후 원격 리포지토리에 저장 
+git merge dev
+
+git push

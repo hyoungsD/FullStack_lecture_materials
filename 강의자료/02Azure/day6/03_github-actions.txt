@@ -1,0 +1,32 @@
+#1. Azure 포털 전역 검색에서 'App Services'로 검색
+#2. App Services 블레이드에서 [+만들기]
+*언급하지 않은 항목은 모두 기본 값 사용.
+[기본 사항]
+-리소스 그룹: rg-devopslab-[SUFFIX]
+-이름: app-gbcode-[SUFFIX]
+-게시: 코드
+-런타임스택: Node 18 lts
+-운영체제: 리눅스
+-지역: <사전 지정한 지역>
+-가격 책정 플랜: asp-devops-[SUFFIX] / S1
+[배포]
+-지속적인 배포: 사용
+-GitHub 계정: 권한 부여
+-조직: 자신의 GitHub 계정 이름
+-리포지토리: guestbook
+-분기: main
+-기본 인증: 사용
+[모니터링+보안]
+- Application Insights: 아니오
+
+#3. 코드 수정
+- header.ejs, index.ejs 수정
+
+#4. VSCode에서 Git 다루기 
+- SCM에서 Stage 수행
+- 커밋 메시지: first coding --> 커밋
+- Sync Changes
+
+#5. GitHub에서 Actions 확인
+
+#6. 웹 사이트 확인

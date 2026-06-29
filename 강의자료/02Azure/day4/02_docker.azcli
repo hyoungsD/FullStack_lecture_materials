@@ -1,0 +1,22 @@
+#0. sudo 없이 도커 사용
+sudo usermod -aG docker tony
+sudo -su tony
+sudo chmod 666 /var/run/docker.sock
+ 
+#1. 이미지 검색
+
+docker search --limit 5  mysql
+
+#2. 이미지 내려 받기
+##Docker Hub 레지스트리에서 ASP.NET Sample 앱 이미지 검색
+docker pull mcr.microsoft.com/dotnet/samples:aspnetapp
+docker pull mcr.microsoft.com/azuredocs/aci-helloworld
+
+#3. 이미지 목록 확인
+docker image ls
+docker images
+
+#4. 이미지에 태그(새로운 이름) 추가
+docker image tag mcr.microsoft.com/azuredocs/aci-helloworld hello.docker/aci-helloworld:latest
+docker tag mcr.microsoft.com/dotnet/samples:aspnetapp hello.docker/samples
+
