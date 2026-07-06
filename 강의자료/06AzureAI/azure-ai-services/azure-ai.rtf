@@ -1,0 +1,116 @@
+{\rtf1\ansi\ansicpg949\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Monaco;\f1\fnil\fcharset129 AppleSDGothicNeo-Regular;\f2\fnil\fcharset0 HelveticaNeue;
+}
+{\colortbl;\red255\green255\blue255;\red255\green255\blue255;\red0\green0\blue0;\red25\green25\blue25;
+\red144\green1\blue18;\red9\green60\blue148;\red0\green0\blue255;\red107\green0\blue1;\red251\green0\blue7;
+}
+{\*\expandedcolortbl;;\cssrgb\c100000\c100000\c100000;\cssrgb\c0\c0\c0;\cssrgb\c12941\c12941\c12941;
+\cssrgb\c63922\c8235\c8235;\cssrgb\c1569\c31765\c64706;\cssrgb\c0\c0\c100000;\cssrgb\c50196\c0\c0;\cssrgb\c100000\c0\c0;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww15080\viewh16360\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf0 \cb2 \expnd0\expndtw0\kerning0
+1. 
+\f1 \'be\'f0\'be\'ee\'bc\'ad\'ba\'f1\'bd\'ba
+\f0 \
+\{\{endpoint\}\}/text/analytics/v3.1\
+\
+Ocp-Apim-Subscription-Key:\{\{your key\}\}\
+\
+sentiment\
+keyphrases\
+\pard\pardeftab720\partightenfactor0
+
+\f2 \cf4 entities/recognition/general
+\f0 \cf0 \
+\
+\{\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2     \cf5 "documents"\cf0 :[\cb1 \
+\cb2         \{\cb1 \
+\cb2             \cf5 "id"\cf0 : \cf6 "1"\cf0 ,\cb1 \
+\cb2             \cf5 "language"\cf0 : \cf6 "ko"\cf0 ,\cb1 \
+\cb2             \cf5 "text"\cf0 : \cf6 ""\cf0 \cb1 \
+\cb2         \},\cb1 \
+\cb2         \{\cb1 \
+\cb2             \cf5 "id"\cf0 : \cf6 "2"\cf0 ,\cb1 \
+\cb2             \cf5 "language"\cf0 : \cf6 "ko"\cf0 ,\cb1 \
+\cb2             \cf5 "text"\cf0 : \cf6 "."\cf0 \cb1 \
+\cb2         \},\{\cb1 \
+\cb2             \cf5 "id"\cf0 : \cf6 "3"\cf0 ,\cb1 \
+\cb2             \cf5 "language"\cf0 : \cf6 "ko"\cf0 ,\cb1 \
+\cb2             \cf5 "text"\cf0 : \cf6 ""\cf0 \cb1 \
+\cb2         \},\{\cb1 \
+\cb2             \cf5 "id"\cf0 : \cf6 "4"\cf0 ,\cb1 \
+\cb2             \cf5 "language"\cf0 : \cf6 "en"\cf0 ,\cb1 \
+\cb2             \cf5 "text"\cf0 : \cf6 ""\cf0 \cb1 \
+\cb2         \}\cb1 \
+\cb2     ]\cb1 \
+\cb2 \}\
+\
+2. 
+\f1 \'c0\'bd\'bc\'ba\'bc\'ad\'ba\'f1\'bd\'ba
+\f0 (TTS, STT)\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2 \cf4 https://\{\{your region\}\}.tts.speech.microsoft.com/cognitiveservices/v1\
+X-Microsoft-OutputFormat:riff-16khz-16bit-mono-pcm\
+Content-Type:application/ssml+xml\
+\pard\pardeftab720\partightenfactor0
+
+\f0 \cf0 Ocp-Apim-Subscription-Key:\{\{your key\}\}\
+\pard\pardeftab720\partightenfactor0
+
+\f2 \cf4 \
+voice name: 
+\f0 \cf7 ko-KR-SunHiNeural, ko-KR-InJoonNeural
+\f2 \cf4 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f0 \cf7 <\cf8 speak\cf0  \cf9 version\cf0 =\cf7 "1.0"\cf0  \cf9 xmlns\cf0 =\cf7 "http://www.w3.org/2001/10/synthesis"\cf0  \cf9 xml:lang\cf0 =\cf7 "ko-KR">\cf0 \cb1 \
+\cf7 \cb2 <\cf8 voice\cf0  \cf9 name\cf0 = \cf7 "ko-KR-SunHiNeural">\cf0 \cb1 \
+\
+\cf7 \cb2 </\cf8 voice\cf7 >\cf0 \cb1 \
+\cf7 \cb2 </\cf8 speak\cf7 >\cf0 \cb1 \
+\
+\
+3. Vision\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb2 \{\{endpoint\}\}/vision/v3.2\
+\pard\pardeftab720\partightenfactor0
+
+\f2 \cf4 Content-Type: application/octet-stream\
+\
+4. Translator\
+https://api.cognitive.microsofttranslator.com/translate?to=en,fr,ja,ko&api-version=3.0\
+\pard\pardeftab720\partightenfactor0
+
+\f0 \cf0 Ocp-Apim-Sumbscription-Key:\{\{your key\}\}\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2 \cf4 Ocp-Apim-Subscription-Region: \{\{your region\}\}
+\f0 \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 [\cb1 \
+\cb2     \{\cb1 \
+\cb2         \cf5 "id"\cf0 : \cf6 "1"\cf0 ,\cb1 \
+\cb2         \cf5 "Text"\cf0 : \cf6 "
+\f1 \'be\'c8\'b3\'e7\'c7\'cf\'bc\'bc\'bf\'e4
+\f0 . 
+\f1 \'be\'ee\'b6\'bb\'b0\'d4
+\f0  
+\f1 \'b5\'b5\'bf\'cd\'b5\'e5\'b8\'b1\'b1\'ee\'bf\'e4
+\f0 ?"\cf0 \cb1 \
+\cb2     \},\cb1 \
+\cb2     \{\cb1 \
+\cb2         \cf5 "text"\cf0 : \cf6 "Bonjour. Comment pouvons-nous vous aider\'a0?"\cf0 ,\cb1 \
+\cb2         \cf5 "to"\cf0 : \cf6 "fr"\cf0 \cb1 \
+\cb2     \}\cb1 \
+\cb2 ]\cb1 \
+\
+}
